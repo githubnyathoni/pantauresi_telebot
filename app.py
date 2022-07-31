@@ -80,7 +80,7 @@ def serveData(chatId, results):
         manifest = ''
         results = results["result"]
         for val in results["manifest"]:
-            manifest += (val["manifest_code"] + " | " + val["manifest_description"] + " | " + val["manifest_date"] + " " + val["manifest_time"] + "\n\n")
+            manifest += (str(val["manifest_code"]) + " | " + val["manifest_description"] + " | " + val["manifest_date"] + " " + val["manifest_time"] + "\n\n")
         response = ('Ekspedisi: ' + results["summary"]["courier_name"] + '\n' +
         'Resi: ' + results["summary"]["waybill_number"] + '\n' +
         'Pengirim: ' + results["summary"]["shipper_name"] + '\n' +
