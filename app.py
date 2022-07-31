@@ -133,4 +133,4 @@ def apiTracking(data):
     jsonData = session.post(url, headers=headers, data=payload).json()
     return jsonData["rajaongkir"]
 
-bot.infinity_polling()
+# bot.infinity_polling()
