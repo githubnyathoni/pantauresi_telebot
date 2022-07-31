@@ -88,7 +88,7 @@ def serveData(chatId, results):
         'Manifest: \n' + manifest)
         bot.send_message(chatId, response)
         data["manifest"] = str(results["manifest"])
-        cursor.execute("SELECT id FROM waybill WHERE NOT waybill = ?", (results["summary"]["waybill_number"],))
+        cursor.execute("SELECT id FROM waybill WHERE waybill = ?", (results["summary"]["waybill_number"],))
         isExists = cursor.fetchall()
         if len(isExists) == 0 and results["summary"]["status"] != 'DELIVERED':
             afterTracking(chatId, results["summary"])
