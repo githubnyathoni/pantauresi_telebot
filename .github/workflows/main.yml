@@ -5,8 +5,8 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
-  schedule:
-    - cron: "0 * * * *"
+#   schedule:
+#     - cron: "0 * * * *"
     
   push:
     branches: [ "master" ]
@@ -39,14 +39,14 @@ jobs:
       - name: Install pyTelegramBotAPI Python package
         run: pip install pyTelegramBotAPI
 
-
-      # Runs a set of commands using the runners shell
-      - name: Run a script
-        run: python script.py
-        
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "Add changes"
           git push
+      # Runs a set of commands using the runners shell
+      - name: Run a script
+        run: python script.py
+        
+
